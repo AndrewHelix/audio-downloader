@@ -39,7 +39,7 @@ export default function Home() {
 
 	const getWords = async () => {
 		const res = await fetch(
-			'http://localhost:3000/api/words?search=' + searchValue
+			'/api/words?search=' + searchValue
 		);
 		const json = await res.json();
 		setSuggestions(json);
@@ -48,7 +48,7 @@ export default function Home() {
 	const searchHandler = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const res = await fetch(
-			'http://localhost:3000/api/search?word=' + searchValue
+			'/api/search?word=' + searchValue
 		);
 		let html = await res.json();
 		html = html.trim();
